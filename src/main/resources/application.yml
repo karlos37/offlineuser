@@ -1,0 +1,36 @@
+client:
+    foodItem:
+        url: http://localhost:8080/
+    foodOrder:
+        url: http://localhost:8080/
+server:
+    port: 8082
+spring:
+    datasource:
+        driver-class-name: org.h2.Driver
+        password: test
+        url: jdbc:h2:mem:testdb
+        username: test
+    h2:
+        console:
+            enabled: true
+    jpa:
+        hibernate:
+            ddl-auto: none
+    mvc:
+        pathmatch:
+            matching-strategy: ant_path_matcher
+    sql:
+        init:
+            mode: always
+    kafka:
+        consumer:
+            bootstrap-servers: localhost:9092
+            group-id: group-id
+            auto-offset-reset: earliest
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        producer:
+            bootstrap-servers: localhost:9092
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.apache.kafka.common.serialization.StringSerializer
