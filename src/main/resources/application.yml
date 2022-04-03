@@ -5,6 +5,11 @@ client:
         url: http://localhost:8080/
 server:
     port: 8082
+    ssl:
+        key-store: classpath:offline_user_cert.jks
+        key-store-type: JKS
+        key-alias: offline_user_cert
+        key-store-password: password123
 spring:
     datasource:
         driver-class-name: org.h2.Driver
